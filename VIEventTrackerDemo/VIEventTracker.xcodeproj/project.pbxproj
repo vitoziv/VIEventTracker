@@ -21,6 +21,8 @@
 		5F852CC01895160E00E882B6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F852CA21895160E00E882B6 /* UIKit.framework */; };
 		5F852CC81895160E00E882B6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5F852CC61895160E00E882B6 /* InfoPlist.strings */; };
 		5F852CCA1895160E00E882B6 /* VIEventTrackerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F852CC91895160E00E882B6 /* VIEventTrackerTests.m */; };
+		5F852CD61895167200E882B6 /* VIEventTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F852CD51895167200E882B6 /* VIEventTracker.m */; };
+		5F852CDC1895219A00E882B6 /* VIETEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F852CDB1895219A00E882B6 /* VIETEvent.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,10 @@
 		5F852CC51895160E00E882B6 /* VIEventTrackerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "VIEventTrackerTests-Info.plist"; sourceTree = "<group>"; };
 		5F852CC71895160E00E882B6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5F852CC91895160E00E882B6 /* VIEventTrackerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VIEventTrackerTests.m; sourceTree = "<group>"; };
+		5F852CD41895167200E882B6 /* VIEventTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIEventTracker.h; sourceTree = "<group>"; };
+		5F852CD51895167200E882B6 /* VIEventTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIEventTracker.m; sourceTree = "<group>"; };
+		5F852CDA1895219A00E882B6 /* VIETEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIETEvent.h; sourceTree = "<group>"; };
+		5F852CDB1895219A00E882B6 /* VIETEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIETEvent.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +118,7 @@
 		5F852CA41895160E00E882B6 /* VIEventTracker */ = {
 			isa = PBXGroup;
 			children = (
+				5F852CD31895165E00E882B6 /* VIEventTracker */,
 				5F852CAD1895160E00E882B6 /* AppDelegate.h */,
 				5F852CAE1895160E00E882B6 /* AppDelegate.m */,
 				5F852CB01895160E00E882B6 /* Main.storyboard */,
@@ -150,6 +157,18 @@
 				5F852CC61895160E00E882B6 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5F852CD31895165E00E882B6 /* VIEventTracker */ = {
+			isa = PBXGroup;
+			children = (
+				5F852CD41895167200E882B6 /* VIEventTracker.h */,
+				5F852CD51895167200E882B6 /* VIEventTracker.m */,
+				5F852CDA1895219A00E882B6 /* VIETEvent.h */,
+				5F852CDB1895219A00E882B6 /* VIETEvent.m */,
+			);
+			name = VIEventTracker;
+			path = ../../VIEventTracker;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,7 +268,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F852CD61895167200E882B6 /* VIEventTracker.m in Sources */,
 				5F852CB51895160E00E882B6 /* ViewController.m in Sources */,
+				5F852CDC1895219A00E882B6 /* VIETEvent.m in Sources */,
 				5F852CAF1895160E00E882B6 /* AppDelegate.m in Sources */,
 				5F852CAB1895160E00E882B6 /* main.m in Sources */,
 			);
@@ -460,6 +481,7 @@
 				5F852CCF1895160E00E882B6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5F852CD01895160E00E882B6 /* Build configuration list for PBXNativeTarget "VIEventTrackerTests" */ = {
 			isa = XCConfigurationList;
@@ -468,6 +490,7 @@
 				5F852CD21895160E00E882B6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
