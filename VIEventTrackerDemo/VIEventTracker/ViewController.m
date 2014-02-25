@@ -23,7 +23,7 @@
         NSLog(@"count: %ld", (long)times);
     }];
     
-    [VIEventTracker untrackEvent:@"test"];
+    [VIEventTracker stopTrackEvent:@"test"];
     
     if ([VIEventTracker isTrackingEvent:@"test"]) {
         NSLog(@"is Tracking Event");

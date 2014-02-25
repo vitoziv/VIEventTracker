@@ -64,7 +64,7 @@
         if (handler) {
             handler(count);
         }
-        [self untrackEvent:event];
+        [self stopTrackEvent:event];
     }];
 }
 
@@ -74,7 +74,7 @@
     [self trackEvent:event handler:handler];
 }
 
-+ (void)untrackEvent:(NSString *)event {
++ (void)stopTrackEvent:(NSString *)event {
     VIEventTracker *tracker = [VIEventTracker sharedTracker];
     
     VIETEvent *eventModel = tracker.trackData[event];
@@ -86,7 +86,7 @@
     tracker.trackData[event] = eventModel;
 }
 
-+ (void)retrackEvent:(NSString *)event {
++ (void)resumeEvent:(NSString *)event {
     VIEventTracker *tracker = [VIEventTracker sharedTracker];
     
     VIETEvent *eventModel = tracker.trackData[event];

@@ -16,19 +16,24 @@
 + (void)trackOnceEvent:(NSString *)event handler:(void(^)(NSUInteger count))handler;
 + (void)trackAppVersionWithHandler:(void(^)(NSUInteger count))handler;
 
-+ (void)untrackEvent:(NSString *)event;
-
 /**
- *  Restart track event. Simplely set tracking = YES
+ *  Call this method will untrack the Event, that means the handler of `+ (void)trackEvent:(NSString *)event handler:(void(^)(NSUInteger count))handler;` will never be called.
  *
- *  @param event
+ *  @param event Event name
  */
-+ (void)retrackEvent:(NSString *)event;
++ (void)stopTrackEvent:(NSString *)event;
 
 /**
- *  Reset event count = 0, tracking = YES
+ *  If event is stop then resume event.
  *
- *  @param event
+ *  @param event Event name
+ */
++ (void)resumeEvent:(NSString *)event;
+
+/**
+ *  Reset event to original state
+ *
+ *  @param event Event name
  */
 + (void)resetEvent:(NSString *)event;
 
