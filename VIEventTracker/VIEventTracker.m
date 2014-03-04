@@ -13,6 +13,7 @@
 
 @interface VIEventTracker ()
 
+@property (strong, nonatomic) NSDictionary *orignTrackData;
 @property (strong, nonatomic) NSMutableDictionary *trackData;
 
 @end
@@ -34,7 +35,7 @@
         }
         
         [[NSNotificationCenter defaultCenter] addObserver:instance
-                                                 selector:@selector(eventTrackerBeginBackground:)
+                                                 selector:@selector(eventTrackerEnterBackground:)
                                                      name:UIApplicationDidEnterBackgroundNotification
                                                    object:[UIApplication sharedApplication]];
     });
@@ -117,9 +118,14 @@
 }
 
 + (BOOL)synchronize {
-    NSLog(@"%@", [VIEventTracker sharedTracker].trackData);
-    if ([NSKeyedArchiver archiveRootObject:[VIEventTracker sharedTracker].trackData toFile:VI_TRACKER_FILE_PATH]) {
-        NSLog(@"Tracker file saved");
+    VIEventTracker *tracker = [VIEventTracker sharedTracker];
+    if ([tracker.trackData isEqualToDictionary:tracker.orignTrackData]) {
+        // Nothing changed, no need to save.
+        return YES;
+    }
+    
+    if ([NSKeyedArchiver archiveRootObject:tracker.trackData toFile:VI_TRACKER_FILE_PATH]) {
+        NSLog(@"Tracker file saved.\n%@", tracker.trackData);
         return YES;
     } else {
         NSLog(@"Tracker file not save");
@@ -129,7 +135,7 @@
 
 #pragma mark - Notification
 
-- (void)eventTrackerBeginBackground:(NSNotification *)notification {
+- (void)eventTrackerEnterBackground:(NSNotification *)notification {
     [VIEventTracker synchronize];
 }
 
