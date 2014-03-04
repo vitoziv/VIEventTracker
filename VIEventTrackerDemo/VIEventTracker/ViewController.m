@@ -31,7 +31,7 @@
         NSLog(@"not tracking Event");
     }
     
-    [VIEventTracker trackAppVersionWithHandler:^(NSUInteger count) {
+    [VIEventTracker trackDifferentAppVersionWithHandler:^(NSUInteger count) {
         NSLog(@"trackDifferentAppVersionWithResult count: %ld", (long)count);
     }];
     

@@ -68,10 +68,10 @@
     }];
 }
 
-+ (void)trackAppVersionWithHandler:(void(^)(NSUInteger count))handler {
++ (void)trackDifferentAppVersionWithHandler:(void(^)(NSUInteger count))handler {
     NSDictionary *infoPlist = [[NSBundle mainBundle] infoDictionary];
     NSString *event = [NSString stringWithFormat:@"%@(%@)", infoPlist[@"CFBundleDisplayName"], infoPlist[@"CFBundleVersion"]];
-    [self trackEvent:event handler:handler];
+    [self trackOnceEvent:event handler:handler];
 }
 
 + (void)stopTrackEvent:(NSString *)event {
@@ -116,16 +116,21 @@
     return NO;
 }
 
++ (BOOL)synchronize {
+    NSLog(@"%@", [VIEventTracker sharedTracker].trackData);
+    if ([NSKeyedArchiver archiveRootObject:[VIEventTracker sharedTracker].trackData toFile:VI_TRACKER_FILE_PATH]) {
+        NSLog(@"Tracker file saved");
+        return YES;
+    } else {
+        NSLog(@"Tracker file not save");
+        return NO;
+    }
+}
+
 #pragma mark - Notification
 
 - (void)eventTrackerBeginBackground:(NSNotification *)notification {
-    if ([NSKeyedArchiver archiveRootObject:[VIEventTracker sharedTracker].trackData toFile:VI_TRACKER_FILE_PATH ]) {
-        NSLog(@"Tracker file saved");
-    } else {
-        NSLog(@"Tracker file not save");
-    }
-    
-    NSLog(@"%@", [VIEventTracker sharedTracker].trackData);
+    [VIEventTracker synchronize];
 }
 
 @end
