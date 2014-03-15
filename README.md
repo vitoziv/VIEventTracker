@@ -17,7 +17,7 @@ Anywhere you want use VIEventTracker, simply add ``#import "VIEventTracker.h"``
 
 **Simple Demo**
 
-Track a event with a call back.
+Track event with a call back.
 
 ```Objc
 [VIEventTracker trackEvent:@"test" handler:^(NSUInteger times) {
@@ -54,7 +54,7 @@ Call this method will untrack the Event, that means the handler for the event wi
 
 ##More
 
-The event tack status will be saved when app enter background. If you want to save the status immediately, you can call ``[VIEventTracker synchronize];``.
+The event track status will be saved when app enter background. If you want to save the status immediately, you can call ``[VIEventTracker synchronize];``.
 
 More other API see the ``VIEventTracker.h`` file.
 
