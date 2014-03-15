@@ -42,7 +42,7 @@
     return instance;
 }
 
-+ (void)trackEvent:(NSString *)event handler:(void(^)(NSUInteger count))handler {
++ (void)trackEvent:(NSString *)event step:(NSInteger)step handler:(void (^)(NSUInteger count))handler {
     VIEventTracker *tracker = [VIEventTracker sharedTracker];
     
     VIETEvent *eventModel = tracker.trackData[event];
@@ -51,7 +51,7 @@
     }
     
     if (eventModel.isTracking) {
-        eventModel.count += 1;
+        eventModel.count += step;
         
         tracker.trackData[event] = eventModel;
         if (handler) {
@@ -60,12 +60,16 @@
     }
 }
 
++ (void)trackEvent:(NSString *)event handler:(void(^)(NSUInteger count))handler {
+    [self trackEvent:event step:1 handler:handler];
+}
+
 + (void)trackOnceEvent:(NSString *)event handler:(void(^)(NSUInteger count))handler {
     [self trackEvent:event handler:^(NSUInteger count) {
+        [self stopTrackEvent:event];
         if (handler) {
             handler(count);
         }
-        [self stopTrackEvent:event];
     }];
 }
 
@@ -115,6 +119,15 @@
     }
     
     return NO;
+}
+
++ (NSInteger)trackCountOfEvent:(NSString *)event {
+    VIETEvent *eventModel = [VIEventTracker sharedTracker].trackData[event];
+    if (eventModel) {
+        return eventModel.count;
+    }
+    
+    return 0;
 }
 
 + (BOOL)synchronize {
