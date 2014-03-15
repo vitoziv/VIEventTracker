@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F1A1BEC18D3F51900C7A2E8 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F1A1BEB18D3F51900C7A2E8 /* TableViewController.m */; };
 		5F852C9F1895160E00E882B6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F852C9E1895160E00E882B6 /* Foundation.framework */; };
 		5F852CA11895160E00E882B6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F852CA01895160E00E882B6 /* CoreGraphics.framework */; };
 		5F852CA31895160E00E882B6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F852CA21895160E00E882B6 /* UIKit.framework */; };
@@ -14,7 +15,6 @@
 		5F852CAB1895160E00E882B6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F852CAA1895160E00E882B6 /* main.m */; };
 		5F852CAF1895160E00E882B6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F852CAE1895160E00E882B6 /* AppDelegate.m */; };
 		5F852CB21895160E00E882B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F852CB01895160E00E882B6 /* Main.storyboard */; };
-		5F852CB51895160E00E882B6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F852CB41895160E00E882B6 /* ViewController.m */; };
 		5F852CB71895160E00E882B6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F852CB61895160E00E882B6 /* Images.xcassets */; };
 		5F852CBE1895160E00E882B6 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F852CBD1895160E00E882B6 /* XCTest.framework */; };
 		5F852CBF1895160E00E882B6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F852C9E1895160E00E882B6 /* Foundation.framework */; };
@@ -36,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5F1A1BEA18D3F51900C7A2E8 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		5F1A1BEB18D3F51900C7A2E8 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 		5F852C9B1895160E00E882B6 /* VIEventTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VIEventTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F852C9E1895160E00E882B6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5F852CA01895160E00E882B6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -47,8 +49,6 @@
 		5F852CAD1895160E00E882B6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5F852CAE1895160E00E882B6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		5F852CB11895160E00E882B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		5F852CB31895160E00E882B6 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		5F852CB41895160E00E882B6 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		5F852CB61895160E00E882B6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		5F852CBC1895160E00E882B6 /* VIEventTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VIEventTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F852CBD1895160E00E882B6 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -122,10 +122,10 @@
 				5F852CAD1895160E00E882B6 /* AppDelegate.h */,
 				5F852CAE1895160E00E882B6 /* AppDelegate.m */,
 				5F852CB01895160E00E882B6 /* Main.storyboard */,
-				5F852CB31895160E00E882B6 /* ViewController.h */,
-				5F852CB41895160E00E882B6 /* ViewController.m */,
 				5F852CB61895160E00E882B6 /* Images.xcassets */,
 				5F852CA51895160E00E882B6 /* Supporting Files */,
+				5F1A1BEA18D3F51900C7A2E8 /* TableViewController.h */,
+				5F1A1BEB18D3F51900C7A2E8 /* TableViewController.m */,
 			);
 			path = VIEventTracker;
 			sourceTree = "<group>";
@@ -269,9 +269,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F852CD61895167200E882B6 /* VIEventTracker.m in Sources */,
-				5F852CB51895160E00E882B6 /* ViewController.m in Sources */,
 				5F852CDC1895219A00E882B6 /* VIETEvent.m in Sources */,
 				5F852CAF1895160E00E882B6 /* AppDelegate.m in Sources */,
+				5F1A1BEC18D3F51900C7A2E8 /* TableViewController.m in Sources */,
 				5F852CAB1895160E00E882B6 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
