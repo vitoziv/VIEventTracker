@@ -27,7 +27,7 @@ Track event with a call back.
 
 **Another demo**
 
-Track a event, when this method called 3 times, do something you want.
+Track event, when this method called 3 times, do something you want.
 
 ```Objc
 [VIEventTracker trackEvent:@"test" handler:^(NSUInteger times) {
