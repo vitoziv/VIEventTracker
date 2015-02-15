@@ -28,10 +28,13 @@
         instance = [[self alloc] init];
         
         NSFileManager *fileManager = [[NSFileManager alloc] init];
-        instance.trackData = [NSMutableDictionary dictionary];
         NSString *filePath = VI_TRACKER_FILE_PATH;
         if ([fileManager fileExistsAtPath:filePath]) {
             instance.trackData = [NSKeyedUnarchiver unarchiveObjectWithFile:filePath];
+        }
+        
+        if (!instance.trackData) {
+            instance.trackData = [NSMutableDictionary dictionary];
         }
         
         [[NSNotificationCenter defaultCenter] addObserver:instance
