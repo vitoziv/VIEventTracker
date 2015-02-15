@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Vito. All rights reserved.
 //
 
-#define VI_TRACKER_FILE_PATH [[NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) firstObject] stringByAppendingPathComponent:@"vi-event-tracker.plist"]
+#define VI_TRACKER_FILE_PATH [[NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES) firstObject] stringByAppendingPathComponent:@"vi-event-tracker.plist"]
 
 #import "VIEventTracker.h"
 #import "VIETEvent.h"
