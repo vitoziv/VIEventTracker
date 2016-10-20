@@ -12,5 +12,6 @@
 
 @property (nonatomic) NSInteger count;
 @property (nonatomic, getter = isTracking) BOOL tracking;
+@property (nonatomic, getter = isLocked) BOOL locked;
 
 @end

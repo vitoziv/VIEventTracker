@@ -53,7 +53,7 @@
         eventModel = [[VIETEvent alloc] init];
     }
     
-    if (eventModel.isTracking) {
+    if (eventModel.isTracking && !eventModel.isLocked) {
         eventModel.count += step;
         
         tracker.trackData[event] = eventModel;
@@ -102,6 +102,30 @@
         eventModel.tracking = YES;
         tracker.trackData[event] = eventModel;
     }
+}
+
++ (void)lockTrackEvent:(NSString *)event {
+    VIEventTracker *tracker = [VIEventTracker sharedTracker];
+    
+    VIETEvent *eventModel = tracker.trackData[event];
+    if (!eventModel) {
+        return;
+    }
+    
+    eventModel.locked = YES;
+    tracker.trackData[event] = eventModel;
+}
+
++ (void)unlockEvent:(NSString *)event {
+    VIEventTracker *tracker = [VIEventTracker sharedTracker];
+    
+    VIETEvent *eventModel = tracker.trackData[event];
+    if (!eventModel) {
+        return;
+    }
+    
+    eventModel.locked = NO;
+    tracker.trackData[event] = eventModel;
 }
 
 + (void)resetEvent:(NSString *)event {
