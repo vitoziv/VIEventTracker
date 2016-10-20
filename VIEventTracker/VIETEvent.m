@@ -18,6 +18,7 @@
     if (self) {
         _tracking = YES;
         _count = 0;
+        _locked = NO;
     }
     
     return self;

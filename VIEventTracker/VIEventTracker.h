@@ -59,6 +59,26 @@
 + (void)resumeEvent:(NSString *)event;
 
 /**
+ *  Call this method will untrack the Event, that means the handler for the event will not be called until next launch or unlock event.
+ *  @code 
+ *  // Invoke this method will not call the handler block
+ *  + (void)trackEvent:(NSString *)event 
+ *             handler:(void(^)(NSUInteger count))handler;
+ *
+ *  @endcode
+ *
+ *  @param event Event name
+ */
++ (void)lockTrackEvent:(NSString *)event;
+
+/**
+ *  If event is lock then unlock event.
+ *
+ *  @param event Event name
+ */
++ (void)unlockEvent:(NSString *)event;
+
+/**
  *  Reset event to original state
  *
  *  @param event Event name
