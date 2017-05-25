@@ -162,6 +162,12 @@
     tracker.trackData = [NSMutableDictionary dictionary];
 }
 
++ (void)removeEvent:(NSString *)event {
+    VIEventTracker *tracker = [VIEventTracker sharedTracker];
+    VIETEvent *eventModel = tracker.trackData[event];
+    [tracker.trackData removeObjectForKey:event];
+}
+
 + (BOOL)synchronize {
     VIEventTracker *tracker = [VIEventTracker sharedTracker];
     if ([tracker.trackData isEqualToDictionary:tracker.orignTrackData]) {
