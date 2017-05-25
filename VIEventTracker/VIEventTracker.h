@@ -88,6 +88,12 @@
 + (BOOL)isTrackingEvent:(NSString *)event;
 + (NSInteger)trackCountOfEvent:(NSString *)event;
 
+
+/**
+ Clean all data
+ */
++ (void)resetAllEvent;
+
 /**
  *  Writes any modifications to the persistent domains to disk and updates all unmodified persistent domains to what is on disk.
  *

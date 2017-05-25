@@ -157,6 +157,11 @@
     return 0;
 }
 
++ (void)resetAllEvent {
+    VIEventTracker *tracker = [VIEventTracker sharedTracker];
+    tracker.trackData = [NSMutableDictionary dictionary];
+}
+
 + (BOOL)synchronize {
     VIEventTracker *tracker = [VIEventTracker sharedTracker];
     if ([tracker.trackData isEqualToDictionary:tracker.orignTrackData]) {
