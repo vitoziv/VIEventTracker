@@ -157,14 +157,13 @@
     return 0;
 }
 
-+ (void)resetAllEvent {
++ (void)removeAllEvent {
     VIEventTracker *tracker = [VIEventTracker sharedTracker];
     tracker.trackData = [NSMutableDictionary dictionary];
 }
 
 + (void)removeEvent:(NSString *)event {
     VIEventTracker *tracker = [VIEventTracker sharedTracker];
-    VIETEvent *eventModel = tracker.trackData[event];
     [tracker.trackData removeObjectForKey:event];
 }
 
